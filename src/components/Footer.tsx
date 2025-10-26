@@ -21,17 +21,27 @@ export const Footer = () => {
             <h4 className="font-semibold text-sm uppercase tracking-wide">Shop</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products" className="text-muted-foreground hover:text-foreground transition-colors">
-                  All Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=new" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/new-arrivals" className="text-muted-foreground hover:text-foreground transition-colors">
                   New Arrivals
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=sale" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/clothing" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Clothing
+                </Link>
+              </li>
+              <li>
+                <Link to="/shoes" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Shoes
+                </Link>
+              </li>
+              <li>
+                <Link to="/accessories" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Accessories
+                </Link>
+              </li>
+              <li>
+                <Link to="/sale" className="text-muted-foreground hover:text-foreground transition-colors">
                   Sale
                 </Link>
               </li>
@@ -43,19 +53,19 @@ export const Footer = () => {
             <h4 className="font-semibold text-sm uppercase tracking-wide">Customer Care</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/shipping-returns" className="text-muted-foreground hover:text-foreground transition-colors">
                   Shipping & Returns
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

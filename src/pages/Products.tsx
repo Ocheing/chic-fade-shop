@@ -2,6 +2,7 @@ import { PageTransition } from '@/components/PageTransition';
 import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useState } from 'react';
 import product1 from '@/assets/product-1.jpg';
 import product2 from '@/assets/product-2.jpg';
 import product3 from '@/assets/product-3.jpg';
@@ -22,6 +23,9 @@ const allProducts = [
 ];
 
 const Products = () => {
+  const [visibleCount, setVisibleCount] = useState(6);
+  const products = allProducts.slice(0, visibleCount);
+  const hasMore = visibleCount < allProducts.length;
   return (
     <PageTransition>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -55,17 +59,23 @@ const Products = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {allProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
 
         {/* Load More */}
-        <div className="text-center">
-          <Button variant="outline" size="lg">
-            Load More
-          </Button>
-        </div>
+        {hasMore && (
+          <div className="text-center">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setVisibleCount(prev => prev + 3)}
+            >
+              Load More
+            </Button>
+          </div>
+        )}
       </div>
     </PageTransition>
   );
