@@ -3,6 +3,7 @@ import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import product1 from '@/assets/product-1.jpg';
 import product2 from '@/assets/product-2.jpg';
 import product3 from '@/assets/product-3.jpg';
@@ -38,11 +39,21 @@ const Products = () => {
         {/* Filters */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
           <div className="flex gap-2 flex-wrap">
-            <Button variant="outline" size="sm">All</Button>
-            <Button variant="ghost" size="sm">Clothing</Button>
-            <Button variant="ghost" size="sm">Accessories</Button>
-            <Button variant="ghost" size="sm">Shoes</Button>
-            <Button variant="ghost" size="sm">New Arrivals</Button>
+            <Link to="/products">
+              <Button variant="outline" size="sm">All</Button>
+            </Link>
+            <Link to="/clothing">
+              <Button variant="ghost" size="sm">Clothing</Button>
+            </Link>
+            <Link to="/accessories">
+              <Button variant="ghost" size="sm">Accessories</Button>
+            </Link>
+            <Link to="/shoes">
+              <Button variant="ghost" size="sm">Shoes</Button>
+            </Link>
+            <Link to="/new-arrivals">
+              <Button variant="ghost" size="sm">New Arrivals</Button>
+            </Link>
           </div>
           <Select defaultValue="featured">
             <SelectTrigger className="w-[180px]">
