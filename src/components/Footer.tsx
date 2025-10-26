@@ -21,6 +21,11 @@ export const Footer = () => {
             <h4 className="font-semibold text-sm uppercase tracking-wide">Shop</h4>
             <ul className="space-y-2 text-sm">
               <li>
+                <Link to="/products" className="text-muted-foreground hover:text-foreground transition-colors">
+                  All Products
+                </Link>
+              </li>
+              <li>
                 <Link to="/new-arrivals" className="text-muted-foreground hover:text-foreground transition-colors">
                   New Arrivals
                 </Link>
